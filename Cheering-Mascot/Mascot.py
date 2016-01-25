@@ -1,5 +1,5 @@
 def call_out_cheer():
-  cheer = input('Enter a cheer: ')
+  cheer = raw_input('Enter a cheer: ')
   mascot_sign_for(cheer)
 
 def display(cheer):
@@ -19,7 +19,11 @@ def mascot_sign_for(cheer):
     else:
       mascot_cheer = "Go Team!"
     display(mascot_cheer)
+    call_out_cheer()
+
   mascot_cheer = "Thanks for plaing!"
-  display(mascot_cheer)
+  return display(mascot_cheer)
 
 call_out_cheer()
+
+
