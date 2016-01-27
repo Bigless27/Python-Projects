@@ -6,15 +6,16 @@ class Roman(object):
   def __init__(self, number):
     self.number = int(number)
     self.convert_table = self.make_table()
-    print self.convert_table
 
     while True:
       choice = raw_input("Type Yes or No for modern Roman Numeral Convert: ").lower()
       if choice == "yes":
-        print "You made it"
+        print "converted number = {0}".format(self.modern_roman_convert())
+        print
         break
       elif choice == "no":
-        self.old_roman_convert()
+        print "converted number = {0}".format(self.old_roman_convert())
+        print
         break
       else:
         print "Please Type Yes or No!"
@@ -78,22 +79,15 @@ class Roman(object):
         number -= 1
       else:
         break
-    print convert_table
-    return table
+    return convert_table
 
 
   def old_roman_convert(self):
     solution = []
-    dict(self.convert_table)
-    table = OrderedDict(sorted(self.convert_table.items()))
-    print table
-
-
-
-
-
-
-    return
+    for key,value in self.convert_table.items():
+      for i in range(0,value):
+        solution.append(key)
+    return ''.join(solution)
 
 
 number = Roman(raw_input("Enter a number to be converted into Roman Numberal Form: "))
