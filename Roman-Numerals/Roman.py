@@ -6,17 +6,17 @@ class Roman(object):
   def __init__(self, number):
     self.number = int(number)
     self.convert_table = self.make_table()
-    choice = raw_input("Type Y or N for modern Roman Numeral Convert: ").lower()
     while True:
-      if choice == "y":
+      choice = raw_input("Type Yes or No for modern Roman Numeral Convert: ").lower()
+      if choice == "yes":
         print "You made it"
         break
-      elif choice == "n":
+      elif choice == "np":
         self.old_roman_convert()
         break
       else:
-        print "Please Type Y or N!"
-        (self, self.number)
+        print "Please Type Yes or N0!"
+
     while True:
       play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
       if play_again == "no":
@@ -57,8 +57,12 @@ class Roman(object):
     return convert_table
 
   def old_roman_convert(self):
-    print self.convert_table
-    print "here"
+    solution = []
+    table = dict(self.convert_table).keys()
+    print table
+
+
+
 
     return
 
