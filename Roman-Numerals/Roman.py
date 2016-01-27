@@ -6,17 +6,21 @@ class Roman(object):
     while True:
       if choice == "y":
         print "You made it"
+        break
       elif choice == "n":
         self.old_roman_convert()
         break
       else:
         print "Please Type Y or N!"
         (self, self.number)
-    play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
-    if play_again == "no":
-      print "Thanks for Playing!"
-    else:
-      Roman(raw_input("Enter another number! "))
+    while True:
+      play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
+      if play_again == "no":
+        print "Thanks for Playing!"
+      elif play_again == "yes":
+        Roman(raw_input("Enter another number! "))
+      else:
+        print "Please Enter Yes or No!"
 
 
   def old_roman_convert(self):
