@@ -1,11 +1,25 @@
 class Roman(object):
 
   def __init__(self, number):
-    self.number = number
-    self.modern_convert()
-    convert_table = {}
+    self.number = int(number)
+    choice = raw_input("Type Y or N for modern Roman Numeral Convert: ").lower()
+    while True:
+      if choice == "y":
+        print "You made it"
+      elif choice == "n":
+        self.old_roman_convert()
+        break
+      else:
+        print "Please Type Y or N!"
+        (self, self.number)
+    play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
+    if play_again == "no":
+      print "Thanks for Playing!"
+    else:
+      Roman(raw_input("Enter another number! "))
 
-  def modern_convert(self):
+
+  def old_roman_convert(self):
     number = self.number
     solution = []
     while True:
@@ -36,5 +50,5 @@ class Roman(object):
     return
 
 
-number = Roman(15)
+number = Roman(raw_input("Enter a number to be converted into Roman Numberal Form: "))
 
