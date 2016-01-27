@@ -90,5 +90,80 @@ class Roman(object):
     return ''.join(solution)
 
 
+  def modern_roman_convert(self):
+    solution = []
+    reversed_list = OrderedDict(reversed(list(self.convert_table.items())))
+    for key,value in reversed_list.items():
+      print reversed_list
+
+      if value < 4 and key == "I":
+        for i in range(0,value):
+          solution.append(key)
+        continue
+      elif value == 4 and key == "I":
+        if "V" in reversed_list:
+          solution.append("IX")
+          continue
+        else:
+          solution.append("IV")
+          continue
+
+      print key
+      if "V" in reversed_list and "IX" not in solution and "V" not in solution:
+        solution.append("V")
+        continue
+      print "Here"
+      print key
+      if value < 4 and key == "X" :
+        for i in range(0,value):
+          solution.append(key)
+        continue
+      elif value == 4 and key == "X":
+        if "L" in reversed_list:
+          solution.append("XC")
+          continue
+        else:
+          solution.append("XL")
+          continue
+
+      if "L" in reversed_list and "XC" not in solution and "L" not in solution:
+        solution.append("L")
+        continue
+
+      if value < 4 and key == "C" :
+        for i in range(0,value):
+          solution.append(key)
+        continue
+      elif value == 4 and key == "C":
+        if "D" in reversed_list:
+          solution.append("CM")
+          continue
+        else:
+          solution.append("CD")
+          continue
+
+      if "D" in reversed_list and "CM" not in solution and "D" not in solution:
+        solution.append("D")
+        continue
+      elif "M" in reversed_list:
+        solution.append("M")
+        continue
+
+      print solution[::-1]
+      return solution[::-1]
+
+
+
+
+
+    print solution
+
+
+
+
+
+
+
+
 number = Roman(raw_input("Enter a number to be converted into Roman Numberal Form: "))
 
