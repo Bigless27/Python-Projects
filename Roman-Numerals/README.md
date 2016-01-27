@@ -3,4 +3,5 @@
 * Input a number, give it an option of old Roman Numerals or Modern
 * Watch as that number is convertered into Roman Numeral form
 
-- Some bugs with Modern Roman Numerals solution
+##### This program is run in the terminal
+- Some bugs in the Modern Roman Numerals Coversion. Will post uupdated version soon.
