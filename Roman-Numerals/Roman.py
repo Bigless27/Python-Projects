@@ -2,7 +2,6 @@ from collections import OrderedDict
 
 class Roman(object):
 
-
   def __init__(self, number):
     self.number = int(number)
     self.convert_table = self.make_table()
@@ -21,7 +20,6 @@ class Roman(object):
         print "Please Type Yes or No!"
 
     while True:
-      print "top"
       play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
       if play_again == "no":
         print "thanks for playing"
@@ -110,8 +108,6 @@ class Roman(object):
 
       if "V" == key and "V" not in solution and "X" not in solution:
         solution.append("V")
-        continue
-
 
       if value < 4 and key == "X" :
         for i in range(0,value):
@@ -126,8 +122,6 @@ class Roman(object):
 
       if "L" == key and "L" not in solution and "C" not in solution:
         solution.append("L")
-        continue
-
 
       if value < 4 and key == "C" :
         for i in range(0,value):
@@ -142,13 +136,12 @@ class Roman(object):
 
       if "D" == key and "M" not in solution and "D" not in solution:
         solution.append("D")
-        continue
-      elif "M" in reversed_list:
-        solution.append("M")
-        continue
+
+      if "M" == key:
+        for i in range(0,value):
+          solution.append("M")
+
     return ''.join(solution[::-1])
-
-
 
 
 number = Roman(raw_input("Enter a number to be converted into Roman Numberal Form: "))
