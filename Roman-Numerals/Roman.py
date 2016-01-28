@@ -28,6 +28,7 @@ class Roman(object):
         break
       elif play_again == "yes":
         Roman(raw_input("Enter another number! "))
+        break
       else:
         print "Please Enter Yes or No!"
 
