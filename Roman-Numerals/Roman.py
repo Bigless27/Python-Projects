@@ -2,7 +2,6 @@ from collections import OrderedDict
 
 class Roman(object):
 
-
   def __init__(self, number):
     self.number = int(number)
     self.convert_table = self.make_table()
@@ -23,10 +22,11 @@ class Roman(object):
     while True:
       play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
       if play_again == "no":
-        print "Thanks for Playing!"
+        print "thanks for playing"
         break
       elif play_again == "yes":
         Roman(raw_input("Enter another number! "))
+        break
       else:
         print "Please Enter Yes or No!"
 
@@ -94,7 +94,6 @@ class Roman(object):
     solution = []
     reversed_list = OrderedDict(reversed(list(self.convert_table.items())))
     for key,value in reversed_list.items():
-      print reversed_list
 
       if value < 4 and key == "I":
         for i in range(0,value):
@@ -102,33 +101,27 @@ class Roman(object):
         continue
       elif value == 4 and key == "I":
         if "V" in reversed_list:
-          solution.append("IX")
-          continue
+          solution.extend(("I","X"))
         else:
-          solution.append("IV")
-          continue
-
-      print key
-      if "V" in reversed_list and "IX" not in solution and "V" not in solution:
-        solution.append("V")
+          solution.extend(("I","V"))
         continue
-      print "Here"
-      print key
+
+      if "V" == key and "V" not in solution and "X" not in solution:
+        solution.append("V")
+
       if value < 4 and key == "X" :
         for i in range(0,value):
           solution.append(key)
         continue
       elif value == 4 and key == "X":
         if "L" in reversed_list:
-          solution.append("XC")
-          continue
+          solution.extend(("C","X"))
         else:
-          solution.append("XL")
-          continue
-
-      if "L" in reversed_list and "XC" not in solution and "L" not in solution:
-        solution.append("L")
+          solution.extend(("L","X"))
         continue
+
+      if "L" == key and "L" not in solution and "C" not in solution:
+        solution.append("L")
 
       if value < 4 and key == "C" :
         for i in range(0,value):
@@ -136,33 +129,19 @@ class Roman(object):
         continue
       elif value == 4 and key == "C":
         if "D" in reversed_list:
-          solution.append("CM")
-          continue
+          solution.extend(("M","C"))
         else:
-          solution.append("CD")
-          continue
+          solution.extend(("D","C"))
+        continue
 
-      if "D" in reversed_list and "CM" not in solution and "D" not in solution:
+      if "D" == key and "M" not in solution and "D" not in solution:
         solution.append("D")
-        continue
-      elif "M" in reversed_list:
-        solution.append("M")
-        continue
 
-      print solution[::-1]
-      return solution[::-1]
+      if "M" == key:
+        for i in range(0,value):
+          solution.append("M")
 
-
-
-
-
-    print solution
-
-
-
-
-
-
+    return ''.join(solution[::-1])
 
 
 number = Roman(raw_input("Enter a number to be converted into Roman Numberal Form: "))
