@@ -21,11 +21,8 @@ class Roman(object):
         print "Please Type Yes or No!"
 
     while True:
-      # print "at the top"
       play_again = raw_input("Do you want to enter another number? Please type yes or no: ").lower()
       if play_again == "no":
-        # print "Thanks for Playing!"
-        print "got here!"
         break
       elif play_again == "yes":
         Roman(raw_input("Enter another number! "))
@@ -103,12 +100,10 @@ class Roman(object):
         continue
       elif value == 4 and key == "I":
         if "V" in reversed_list:
-          solution.append("I")
-          solution.append("X")
+          solution.extend(("I","X"))
           continue
         else:
-          solution.append("I")
-          solution.append("V")
+          solution.extend(("I","V"))
           continue
 
       if "V" == key and "V" not in solution and "X" not in solution:
@@ -122,12 +117,10 @@ class Roman(object):
         continue
       elif value == 4 and key == "X":
         if "L" in reversed_list:
-          solution.append("C")
-          solution.append("X")
+          solution.extend(("C","X"))
           continue
         else:
-          solution.append("L")
-          solution.append("X")
+          solution.extend(("L","X"))
           continue
 
       if "L" == key and "L" not in solution and "C" not in solution:
@@ -141,12 +134,10 @@ class Roman(object):
         continue
       elif value == 4 and key == "C":
         if "D" in reversed_list:
-          solution.append("M")
-          solution.append("C")
+          solution.extend(("M","C"))
           continue
         else:
-          solution.append("D")
-          solution.append("C")
+          solution.extend(("D","C"))
           continue
 
       if "D" == key and "M" not in solution and "D" not in solution:
