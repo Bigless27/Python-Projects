@@ -1,0 +1,14 @@
+-Turn the sentence into x many sub arrays that will be split on the white space.
+
+-split the sub array up into individal characters so I am able to itterate through each word
+
+-while itterating through each word in the sentence see if that letter is included is a predefined list of vowels that I will create.
+
+-if: it is a match then return the word.
+-else: it isn't a mathc then move all the consonats to the end of end of the word
+  -stop moving consonates around when you hit a vowel
+  -add "ay" to the end of the word and then join that word back together.
+
+-repeat this process until every word has been converted to piglatin
+
+
