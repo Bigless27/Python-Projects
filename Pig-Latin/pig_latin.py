@@ -6,7 +6,7 @@ class Pig_latin(object):
     print self.convert_sentence()
 
     while True:
-      play_again = raw_input("Do you want to play again? Type yes or no ").lower()
+      play_again = raw_input("Do you want to play again? Type yes or no: ").lower()
       if play_again == "yes":
         Pig_latin()
         break
@@ -15,7 +15,6 @@ class Pig_latin(object):
         break
       else:
         print "Please type yes or no!"
-
 
   def convert_sentence(self):
     new_sentence = self.sentence.split(" ")
