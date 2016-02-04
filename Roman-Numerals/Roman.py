@@ -31,7 +31,6 @@ class Roman(object):
         print "Please Enter Yes or No!"
 
   def make_table(self):
-
     number = self.number
     convert_table = OrderedDict()
     while True:
