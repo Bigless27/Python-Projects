@@ -10,17 +10,10 @@ class Pig_latin(object):
     new_sentence = self.sentence.split(" ")
     converted_sentence = []
     for word in new_sentence:
-      counter = 0
       if word[0] in self.vowels:
-        continue
-      for letter in word:
-        if counter == 1:
-          continue
-        if letter in self.vowels:
-          counter += 1
-        else:
-          converted_sentence.append(''.join(self.word_converter(word)))
-          break
+        converted_sentence.append(word)
+      else:
+        converted_sentence.append(''.join(self.word_converter(word)))
     return (' ').join(converted_sentence)
 
 
@@ -28,7 +21,6 @@ class Pig_latin(object):
     split_word = list(word)
     solution = list(word)
     for letter in split_word:
-      print letter
       if letter not in self.vowels:
         solution.remove(letter)
         solution.append(letter)
@@ -41,5 +33,5 @@ class Pig_latin(object):
 
 
 
-convert = Pig_latin("Hello there")
+convert = Pig_latin("Hello eric ryan there")
 print convert.convert_sentence()
