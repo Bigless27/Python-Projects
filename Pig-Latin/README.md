@@ -6,7 +6,7 @@ FOR each word in the sentence.
 ENDFOR
 RETURN converted sentence
 ```
-
+###Rules:
 ```text
 - If the word starts with a vowel then return the word
 - if the word starts with a consonant then remove the letter and append it to the end of the sentence
