@@ -1,10 +1,9 @@
 class Pig_latin(object):
   vowels = ["a", "e" , "i", "o", "u", "A", "E", "I", "O", "U"]
 
-
   def __init__(self, sentence):
     self.sentence = sentence
-
+    print self.convert_sentence()
 
   def convert_sentence(self):
     new_sentence = self.sentence.split(" ")
@@ -18,9 +17,8 @@ class Pig_latin(object):
 
 
   def word_converter(self,word):
-    split_word = list(word)
     solution = list(word)
-    for letter in split_word:
+    for letter in list(word):
       if letter not in self.vowels:
         solution.remove(letter)
         solution.append(letter)
@@ -29,9 +27,5 @@ class Pig_latin(object):
     solution.append("ay")
     return solution
 
+Pig_latin("Hello eric ryan there")
 
-
-
-
-convert = Pig_latin("Hello eric ryan there")
-print convert.convert_sentence()
