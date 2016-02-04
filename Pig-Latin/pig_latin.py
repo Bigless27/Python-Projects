@@ -1,9 +1,21 @@
 class Pig_latin(object):
   vowels = ["a", "e" , "i", "o", "u", "A", "E", "I", "O", "U"]
 
-  def __init__(self, sentence):
-    self.sentence = sentence
+  def __init__(self):
+    self.sentence = raw_input("Enter a sentence to be converted into pig latin: ")
     print self.convert_sentence()
+
+    while True:
+      play_again = raw_input("Do you want to play again? Type yes or no ").lower()
+      if play_again == "yes":
+        Pig_latin()
+        break
+      elif play_again == "no":
+        print "thanks for playing!"
+        break
+      else:
+        print "Please type yes or no!"
+
 
   def convert_sentence(self):
     new_sentence = self.sentence.split(" ")
@@ -14,7 +26,6 @@ class Pig_latin(object):
       else:
         converted_sentence.append(''.join(self.word_converter(word)))
     return (' ').join(converted_sentence)
-
 
   def word_converter(self,word):
     solution = list(word)
@@ -27,5 +38,5 @@ class Pig_latin(object):
     solution.append("ay")
     return solution
 
-Pig_latin("Hello eric ryan there")
+Pig_latin()
 
