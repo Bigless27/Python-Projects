@@ -1,11 +1,13 @@
 class Todos_list(object):
   def __init__(self):
+    self.taskarray = self.parse()
+
+  def parse(self):
     taskslist = open("todolist.txt",'r')
     taskarray = []
     for task in taskslist.readlines():
       taskarray.append(task.rstrip('\n'))
-    self.taskarray = taskarray
-
+    return taskarray
 
   def save(self):
     with open ("todolist.txt", "w") as text_file:
@@ -30,6 +32,6 @@ class Todos_list(object):
 
 
 tasks = Todos_list()
-
+print tasks
 
 
