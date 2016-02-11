@@ -1,6 +1,8 @@
 class Todos_list(object):
   def __init__(self):
-    self.taskarray = self.parse()
+    taskarray = self.parse()
+    self.taskarray = map(lambda task: Task(task), taskarray)
+
 
   def parse(self):
     taskslist = open("todolist.txt",'r')
