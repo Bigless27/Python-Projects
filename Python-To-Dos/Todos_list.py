@@ -9,11 +9,20 @@ class Todos_list(object):
 
   def add(self, item):
     self.taskarray.append(item)
-    print self.taskarray
+
+  def delete(self, index):
+    del self.taskarray[index - 1]
+
+  def __repr__(self):
+    lines = []
+    for index, value in enumerate(self.taskarray):
+      lines.append("{0}. {1}".format(index, value))
+    return '\n'.join(lines)
 
 
 
 
 tasks = Todos_list()
-tasks.add("melons")
+print tasks
+
 
