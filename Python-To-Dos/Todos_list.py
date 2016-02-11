@@ -1,10 +1,12 @@
-class Todo_list(object):
+class Todos_list(object):
   def __init__(self):
-    list = open("todolist.txt",'r')
-    for task in list.readlines():
-      print task
+    taskslist = open("todolist.txt",'r')
+    taskarray = []
+    for task in taskslist.readlines():
+      taskarray.append(task.rstrip('\n'))
+    print taskarray
 
 
 
 
-
+Todos_list()
