@@ -7,11 +7,18 @@ class Todos_list(object):
     self.taskarray = taskarray
 
 
+  def save(self):
+    with open ("todolist.txt", "w") as text_file:
+      for task in self.taskarray:
+        text_file.write(task + "\n")
+
   def add(self, item):
     self.taskarray.append(item)
+    self.save()
 
   def delete(self, index):
     del self.taskarray[index - 1]
+    self.save()
 
   def __repr__(self):
     lines = []
@@ -23,6 +30,6 @@ class Todos_list(object):
 
 
 tasks = Todos_list()
-print tasks
+
 
 
