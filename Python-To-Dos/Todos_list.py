@@ -4,9 +4,16 @@ class Todos_list(object):
     taskarray = []
     for task in taskslist.readlines():
       taskarray.append(task.rstrip('\n'))
-    print taskarray
+    self.taskarray = taskarray
+
+
+  def add(self, item):
+    self.taskarray.append(item)
+    print self.taskarray
 
 
 
 
-Todos_list()
+tasks = Todos_list()
+tasks.add("melons")
+
